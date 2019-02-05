@@ -22,6 +22,7 @@ public final class Message {
 
     @PrettyName("Phone Number")
     private String phone;
+    private boolean urgent;
 
     public String getId() {
         return id;
@@ -69,5 +70,13 @@ public final class Message {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public boolean isUrgent() {
+        return urgent;
+    }
+
+    public void setUrgent(boolean urgent) {
+        this.urgent = urgent;
     }
 }
