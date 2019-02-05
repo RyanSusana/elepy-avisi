@@ -1,11 +1,30 @@
 package com.elepy.avision.models;
 
+import com.elepy.annotations.IdProvider;
+import com.elepy.annotations.PrettyName;
+import com.elepy.annotations.RestModel;
+import com.elepy.annotations.Text;
+import com.elepy.id.SlugIdentityProvider;
+import com.elepy.models.TextType;
+
+@RestModel(name = "Blog Articles", slug = "/articles")
+@IdProvider(SlugIdentityProvider.class)
 public final class BlogPost {
 
     private String id;
-    private String introduction;
-    private String content;
+
+    @PrettyName("Article Title")
     private String title;
+
+    @Text(value = TextType.TEXTAREA, maximumLength = 300)
+    @PrettyName("Short Blog Intro")
+    private String introduction;
+
+
+    @Text(TextType.MARKDOWN)
+    @PrettyName("Article Content(Markdown)")
+    private String content;
+
 
     public String getId() {
         return id;

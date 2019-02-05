@@ -1,12 +1,27 @@
 package com.elepy.avision.models;
 
+import com.elepy.annotations.*;
+import com.elepy.annotations.Number;
+import com.elepy.id.SlugIdentityProvider;
+import com.elepy.models.TextType;
+
 import java.math.BigDecimal;
 
+@RestModel(name = "Events", slug = "/events")
+@IdProvider(SlugIdentityProvider.class)
 public final class Event {
 
     private String id;
+
+    @PrettyName("Event Title")
     private String title;
+
+    @PrettyName("Event Description (HTML)")
+    @Text(TextType.HTML)
     private String description;
+
+    @PrettyName("Event Price")
+    @Number(minimum = 0)
     private BigDecimal price;
 
     public String getId() {
