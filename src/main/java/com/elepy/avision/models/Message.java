@@ -1,12 +1,26 @@
 package com.elepy.avision.models;
 
+import com.elepy.annotations.PrettyName;
+import com.elepy.annotations.RestModel;
+
+@RestModel(name = "Message Center", slug = "/messages")
 public final class Message {
 
     private String id;
+
+    @PrettyName("First Name")
     private String firstName;
+
+    @PrettyName("Last Name")
     private String lastName;
+
+    @PrettyName("Message Content")
     private String messageContent;
+
+    @PrettyName("E-mail")
     private String email;
+
+    @PrettyName("Phone Number")
     private String phone;
 
     public String getId() {
