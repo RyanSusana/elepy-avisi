@@ -1,9 +1,14 @@
 package com.elepy.avision.models;
 
+import com.elepy.annotations.Boolean;
+import com.elepy.annotations.Create;
 import com.elepy.annotations.PrettyName;
 import com.elepy.annotations.RestModel;
+import com.elepy.avision.services.MessageCreate;
+import com.elepy.models.AccessLevel;
 
 @RestModel(name = "Message Center", slug = "/messages")
+@Create(accessLevel = AccessLevel.PUBLIC, handler = MessageCreate.class)
 public final class Message {
 
     private String id;
@@ -22,6 +27,8 @@ public final class Message {
 
     @PrettyName("Phone Number")
     private String phone;
+
+    @Boolean(trueValue = "This message is urgent", falseValue = "This message is not urgent")
     private boolean urgent;
 
     public String getId() {
