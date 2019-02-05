@@ -28,6 +28,7 @@ public final class Message {
     @PrettyName("Phone Number")
     private String phone;
 
+    @PrettyName("Message Urgency")
     @Boolean(trueValue = "This message is urgent", falseValue = "This message is not urgent")
     private boolean urgent;
 
