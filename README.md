@@ -15,5 +15,7 @@ The backend must include:
 
 ### Other Requirements
 - Support for a web, mobile and desktop frontend
-- Dockerable
 
+
+## Notes
+This repo is split up into 3 branches. The initial code, including models and dependencies. How the code looked at the presentation. And the final solution.
